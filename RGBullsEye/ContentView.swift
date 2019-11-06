@@ -9,17 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let rTarget = Double.random(in: 0..<1)
+    let gTarget = Double.random(in: 0..<1)
+    let bTarget = Double.random(in: 0..<1)
+    @State var rGuess: Double
+    @State var gGuess: Double
+    @State var bGuess: Double
+    
     var body: some View {
         VStack {
             HStack {
                 VStack {
-                    /*@START_MENU_TOKEN@*/Color(red: 0.5, green: 0.5, blue: 0.5)/*@END_MENU_TOKEN@*/
+                    Color(red: rTarget, green: gTarget, blue: bTarget)
                     VStack {
                         Text("Match this color")
                     }
                 }
                 VStack {
-                    /*@START_MENU_TOKEN@*/Color(red: 0.5, green: 0.5, blue: 0.5)/*@END_MENU_TOKEN@*/
+                    Color(red: rGuess, green: gGuess, blue: bGuess)
                     VStack {
                         Text("R: 127 G: 127 B: 127")
                     }
@@ -35,7 +43,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewLayout(.fixed(width: 568, height: 320))
+        ContentView(rGuess: 0.5, gGuess: 0.5, bGuess: 0.5).previewLayout(.fixed(width: 568, height: 320))
     }
 }
 
