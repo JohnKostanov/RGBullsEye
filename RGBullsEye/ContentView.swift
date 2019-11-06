@@ -36,14 +36,18 @@ struct ContentView: View {
             Button(action: {}) {
                 Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
             }
-            Slider(value: .constant(0.5))
+            HStack {
+                Text("0").foregroundColor(.red)
+                Slider(value: $rGuess)
+                Text("255").foregroundColor(.red)
+            }.padding(.horizontal)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(rGuess: 0.5, gGuess: 0.5, bGuess: 0.5).previewLayout(.fixed(width: 568, height: 320))
+        ContentView(rGuess: 0.8, gGuess: 0.5, bGuess: 0.5).previewLayout(.fixed(width: 568, height: 320))
     }
 }
 
