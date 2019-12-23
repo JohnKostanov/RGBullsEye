@@ -16,6 +16,14 @@ struct ContentView: View {
     @State var rGuess: Double
     @State var gGuess: Double
     @State var bGuess: Double
+    
+    func computeScore() -> Int {
+        let rDiff = rGuess - rTarget
+        let gDiff = gGuess - gTarget
+        let bDiff = bGuess - bTarget
+        let diff = sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff)
+        return Int ((1.0 - diff) * 100.0 + 0.5)
+    }
         
     var body: some View {
         VStack {
