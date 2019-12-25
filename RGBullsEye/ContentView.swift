@@ -26,35 +26,37 @@ struct ContentView: View {
         let diff = sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff)
         return Int ((1.0 - diff) * 100.0 + 0.5)
     }
-        
+    
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    Color(red: rTarget, green: gTarget, blue: bTarget)
+        NavigationView {
+            VStack {
+                HStack {
                     VStack {
-                        Text("Match this color")
+                        Color(red: rTarget, green: gTarget, blue: bTarget)
+                        VStack {
+                            Text("Match this color")
+                        }
+                    }
+                    VStack {
+                        Color(red: rGuess, green: gGuess, blue: bGuess)
+                        VStack {
+                            Text("R: \(Int(rGuess * 255)) G: \(Int(gGuess * 255)) B: \(Int(bGuess * 255))")
+                        }
                     }
                 }
-                VStack {
-                    Color(red: rGuess, green: gGuess, blue: bGuess)
-                    VStack {
-                        Text("R: \(Int(rGuess * 255)) G: \(Int(gGuess * 255)) B: \(Int(bGuess * 255))")
-                    }
-                }
+                
+                Button(action: { self.showAlert = true}) {
+                    Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
+                }.alert(isPresented: $showAlert) { () -> Alert in
+                    Alert(title: Text("Your Score"), message: Text(String(computeScore())))
+                }.padding()
+                
+                ColorSlider(value: $rGuess, textColor: .red)
+                ColorSlider(value: $gGuess, textColor: .green)
+                ColorSlider(value: $bGuess, textColor: .blue)
+                
             }
-            
-            Button(action: { self.showAlert = true}) {
-                Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
-            }.alert(isPresented: $showAlert) { () -> Alert in
-                Alert(title: Text("Your Score"), message: Text(String(computeScore())))
-            }.padding()
-            
-            ColorSlider(value: $rGuess, textColor: .red)
-            ColorSlider(value: $gGuess, textColor: .green)
-            ColorSlider(value: $bGuess, textColor: .blue)
-
-        }
+        }//.environment(\.colorScheme, .dark)
     }
 }
 
