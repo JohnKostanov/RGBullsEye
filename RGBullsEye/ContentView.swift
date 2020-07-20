@@ -42,7 +42,13 @@ struct ContentView: View {
                         }
                     }
                     VStack {
-                        Color(red: rGuess, green: gGuess, blue: bGuess)
+                        ZStack(alignment: .center) {
+                            Color(red: rGuess, green: gGuess, blue: bGuess)
+                            Text("77")
+                                .padding(.all, 5)
+                                .background(Color.white)
+                                .mask(Circle())
+                        }
                         VStack {
                             Text("R: \(Int(rGuess * 255)) G: \(Int(gGuess * 255)) B: \(Int(bGuess * 255))")
                         }
