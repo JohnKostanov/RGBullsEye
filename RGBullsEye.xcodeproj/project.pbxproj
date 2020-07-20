@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5218C8DD24C6369E002C5F9B /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218C8DC24C6369E002C5F9B /* TimeCounter.swift */; };
 		5271C4292367916400233A09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5271C4282367916400233A09 /* AppDelegate.swift */; };
 		5271C42B2367916400233A09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5271C42A2367916400233A09 /* SceneDelegate.swift */; };
 		5271C42E2367916400233A09 /* RGBullsEye.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5271C42C2367916400233A09 /* RGBullsEye.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5218C8DC24C6369E002C5F9B /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
 		5271C4252367916400233A09 /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5271C4282367916400233A09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5271C42A2367916400233A09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				5271C4282367916400233A09 /* AppDelegate.swift */,
 				5271C42A2367916400233A09 /* SceneDelegate.swift */,
 				5271C42F2367916400233A09 /* ContentView.swift */,
+				5218C8DC24C6369E002C5F9B /* TimeCounter.swift */,
 				5271C4312367916500233A09 /* Assets.xcassets */,
 				5271C4362367916500233A09 /* LaunchScreen.storyboard */,
 				5271C4392367916500233A09 /* Info.plist */,
@@ -152,6 +155,7 @@
 				5271C4292367916400233A09 /* AppDelegate.swift in Sources */,
 				5271C42E2367916400233A09 /* RGBullsEye.xcdatamodeld in Sources */,
 				5271C4302367916400233A09 /* ContentView.swift in Sources */,
+				5218C8DD24C6369E002C5F9B /* TimeCounter.swift in Sources */,
 				5271C42B2367916400233A09 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
