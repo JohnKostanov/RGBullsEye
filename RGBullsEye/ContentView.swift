@@ -34,7 +34,11 @@ struct ContentView: View {
                     VStack {
                         Color(red: rTarget, green: gTarget, blue: bTarget)
                         VStack {
-                            Text("Match this color")
+                            self.showAlert ? Text("R: \(Int(rTarget * 255.0))" +
+                                                  " G: \(Int(gTarget * 255.0))" +
+                                                  " B: \(Int(bTarget * 255.0))")
+                                           : Text("Match this color")
+                               // .fontWeight(.semibold)
                         }
                     }
                     VStack {
@@ -46,7 +50,7 @@ struct ContentView: View {
                 }
                 
                 Button(action: { self.showAlert = true}) {
-                    Text(/*@START_MENU_TOKEN@*/"Hit Me!"/*@END_MENU_TOKEN@*/)
+                    Text("Нажми меня")
                 }.alert(isPresented: $showAlert) { () -> Alert in
                     Alert(title: Text("Your Score"), message: Text(String(computeScore())))
                 }.padding()
@@ -56,7 +60,11 @@ struct ContentView: View {
                 ColorSlider(value: $bGuess, textColor: .blue)
                 
             }
-        }//.environment(\.colorScheme, .dark)
+            .padding(.horizontal)
+            //.font(Font.subheadline.lowercaseSmallCaps().weight(.light))
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        //.colorScheme(.dark)
     }
 }
 
@@ -72,9 +80,13 @@ struct ColorSlider: View {
     
     var body: some View {
         HStack {
-            Text("0").foregroundColor(textColor)
+            Text("0")
+                .foregroundColor(textColor)
             Slider(value: $value)
-            Text("255").foregroundColor(textColor)
-        }.padding(.horizontal)
+                .background(textColor)
+                .cornerRadius(10)
+            Text("255")
+                .foregroundColor(textColor)
+        }//.padding(.horizontal)
     }
 }
